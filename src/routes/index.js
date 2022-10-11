@@ -3,6 +3,7 @@ const { Router } = require('express');
 const router = Router();
 
 const hotelRoutes = require('../middlewares/hotelRoutes')
+const roomRoutes = require('../middlewares/roomRoutes')
 //Importo todos los routers;
 // const users = require('./users');
 
@@ -14,6 +15,6 @@ const hotelRoutes = require('../middlewares/hotelRoutes')
 // Ejemplo: router.use('/auth', authRouter);
 
 router.use('/hotel', hotelRoutes)
-
+router.use('/room', roomRoutes)
 
 module.exports = router;
