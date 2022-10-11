@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const { locationSchema }  = require('./Location');
-const { servicesHotelSchema } = require('./ServicesHotel');
 const { roomSchema } = require('./Room')
+const { categoryHSchema } = require('./CategoryHotel')
 
 const hotelSchema = new Schema({
     name: {
@@ -22,11 +22,17 @@ const hotelSchema = new Schema({
         type: locationSchema,
     },
     services: {
-        type: [servicesHotelSchema],
+        type: [],
+    },
+    category: {
+        type: categoryHSchema, 
     },
     rooms: {
         type: [roomSchema]
-    }
+    },
+    event: {
+        type: [],
+    },
 })
 
 const Hotel = model('Hotel', hotelSchema)

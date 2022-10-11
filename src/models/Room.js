@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
-const { categorySchema } = require('./Category');
-const { servicesRoomSchema } = require('./ServicesRoom');
+const { categoryRSchema } = require('./CategoryRoom');
 
 const roomSchema = new Schema({
     name: {
@@ -21,10 +20,13 @@ const roomSchema = new Schema({
         type: String,
     },
     category: {
-        type: categorySchema,
+        type: categoryRSchema,
     },
     services: {
-        type: [servicesRoomSchema]
+        type: []
+    },
+    available: {
+        type: Boolean,
     }
 })
 
