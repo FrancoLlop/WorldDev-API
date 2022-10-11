@@ -29,4 +29,6 @@ const hotelSchema = new Schema({
     }
 })
 
-module.exports = model('Hotel', hotelSchema)
+const Hotel = model('Hotel', hotelSchema)
+
+module.exports = {Hotel}
